@@ -10,7 +10,7 @@ else
     then
         echo "Who's that pokemon?"
     else
-        echo -e "Name = $(echo $curlResponse | jq -r '.name')\nId = $(echo $curlResponse | jq '.id')\nWeight = $(echo $curlResponse | jq '.weight')\nHeight = $(echo $curlResponse | jq '.height')" 
+        printf "Nombre:%s\nID: %d\nWeight: %d\nHeight: %d\n" \ $(echo $curlResponse | jq -r '.name, .id, .weight, .height')
     fi
         
 fi
